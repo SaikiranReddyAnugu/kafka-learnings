@@ -24,7 +24,7 @@ public class ProducerExample extends Thread{
         // Load producer configuration settings from a local file
         final Properties props = loadConfig(args[0]);
         for(Data eachProducer : data){
-            ProducerThread p = new ProducerThread(eachProducer.getTopicName(),eachProducer.getUsers(), eachProducer.getItems(), props);
+            ProducerThread p = new ProducerThread(eachProducer.getTopicName(),eachProducer.getUsers(), props);
             p.start();
         }
 
