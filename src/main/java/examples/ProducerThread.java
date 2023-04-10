@@ -30,7 +30,7 @@ public class ProducerThread extends Thread {
                 System.out.println(user.getFirstName() +" "+ user.getLastName()+" "+user.getMobileNumber()+ " "+topic);
 
                 producer.send(
-                        new ProducerRecord<>(topic, user),
+                        new ProducerRecord<>(topic, topic, user),
                         (event, ex) -> {
                             if (ex != null)
                                 ex.printStackTrace();
